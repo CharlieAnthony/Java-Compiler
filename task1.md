@@ -47,31 +47,31 @@ These are expressions which combine two values of type `bool` using a logical op
 
 | Operation | Expression |
 | --------- | ---------- |  
-| Boolean constants | `                        `<br/>`     Γ ⊢ BOOLLIT : bool     ` |
-| Logical AND | `Γ ⊢ P : bool` `Γ ⊢ Q : bool`<br/>`    Γ ⊢ (P & Q) : bool     ` |
-| Logical OR | `Γ ⊢ P : bool` `Γ ⊢ Q : bool`<br/>`    Γ ⊢ (P | Q) : bool     ` |
-| Logical XOR | `Γ ⊢ P : bool` `Γ ⊢ Q : bool`<br/>`    Γ ⊢ (P ^ Q) : bool     ` |
+| Boolean constants | `                          `<br/>`     Γ ⊢ BOOLLIT : bool     ` |
+| Logical AND | `Γ ⊢ P : bool` `Γ ⊢ Q : bool`<br/>`     Γ ⊢ (P & Q) : bool     ` |
+| Logical OR | `Γ ⊢ P : bool` `Γ ⊢ Q : bool`<br/>`     Γ ⊢ (P \| Q) : bool     ` |
+| Logical XOR | `Γ ⊢ P : bool` `Γ ⊢ Q : bool`<br/>`     Γ ⊢ (P ^ Q) : bool     ` |
 
 ### Statements
 These are 'expressions' which represent statements — not having an interesting value (represented by assigning them the type `unit`). Any statement such as those below, which involve a mismatch of types where type-agreement is required, or which involve an expression other than type `bool` where a Boolean expression is expected, should result in an error. In particular, `print` must be followed by either `space` or `newline`, or an expression of type `int`.
 | Operation | Expression |
 | --------- | ---------- |  
-| Print statements | `       Γ ⊢ E : int       `<br/>`     Γ ⊢ print E : unit     `<hr/>`       E = space       `<br/>`     Γ ⊢ print E : unit     `<hr/>`       E = newline       `<br/>`     Γ ⊢ print E : unit     ` |
-| Space statements | `                        `<br/>`     Γ ⊢ space : unit     ` |
-| Newline statements | `                        `<br/>`    Γ ⊢ newline : unit     ` |
-| Skip statements | `                        `<br/>`    Γ ⊢ skip : unit     ` |
-| Assignment | `Γ ⊢ x : α` `Γ ⊢ P : α`<br/>`    Γ ⊢ x := P : unit     ` |
-| While loops | `Γ ⊢ C : bool` `Γ ⊢ B : unit`<br/>`    Γ ⊢ while C do {B} : unit     ` |
-| Repeat loops | `Γ ⊢ B : unit` `Γ ⊢ C : bool`<br/>`    Γ ⊢ repeat {B} until C : unit     ` |
+| Print statements | `           Γ ⊢ E : int           `<br/>`        Γ ⊢ print E : unit       `<hr/>`            E = space            `<br/>`        Γ ⊢ print E : unit       `<hr/>`           E = newline           `<br/>`        Γ ⊢ print E : unit       ` |
+| Space statements | `                               `<br/>`         Γ ⊢ space : unit        ` |
+| Newline statements | `                               `<br/>`        Γ ⊢ newline : unit       ` |
+| Skip statements | `                               `<br/>`         Γ ⊢ skip : unit         ` |
+| Assignment | `    Γ ⊢ x : α    ` `    Γ ⊢ P : α    `<br/>`        Γ ⊢ x := P : unit         ` |
+| While loops | `  Γ ⊢ C : bool   ` `   Γ ⊢ B : unit  `<br/>`    Γ ⊢ while C do {B} : unit     ` |
+| Repeat loops | `  Γ ⊢ B : unit   ` `   Γ ⊢ C : bool  `<br/>`  Γ ⊢ repeat {B} until C : unit   ` |
 
 ### Generic expressions
 These are expressions, whose types depend entirely on the types of other identifiers or expressions. Any expression involving a mismatch of types should result in an error.
 
 | Operation            | Expression                                                                                        |
-|----------------------|---------------------------------------------------------------------------------------------------|  
-| Function invocations | `Γ ⊢ subr : (α₁ , ... , αₙ) → β     Γ ⊢ E₁ : α₁   ...   Γ ⊢ Eₙ : αₙ`<br/>`Γ ⊢ subr (E1, ... , En) : β` |
-| Block expressions    | `Γ ⊢ E₁ : α₁   ...   Γ ⊢ Eₙ : αₙ`<br/>`Γ ⊢ E₁;  ...  ;Eₙ : αₙ`                                    |
-| If statements        | `Γ ⊢ C : bool` `Γ ⊢ B₁ : α` `Γ ⊢ B₂ : α`<br/>`Γ ⊢ if C then {B₁} else {B₂} : α` |                       | Q) : bool     ` |
+| --- | --- |  
+| Function invocations | `Γ ⊢ subr : (α₁ , ... , αₙ) → β     Γ ⊢ E₁ : α₁   ...   Γ ⊢ Eₙ : αₙ`<br/>`                    Γ ⊢ subr (E1, ... , En) : β                    ` |
+| Block expressions    | `Γ ⊢ E₁ : α₁   ...   Γ ⊢ Eₙ : αₙ`<br/>`      Γ ⊢ E₁;  ...  ;Eₙ : αₙ     ` |
+| If statements        | `Γ ⊢ C : bool` `Γ ⊢ B₁ : α` `Γ ⊢ B₂ : α`<br/>`   Γ ⊢ if C then {B₁} else {B₂} : α   ` |                       | Q) : bool     ` |
 
 ## Input / Output specification
 Your interpreter will read a string (the input program in our simple programming language) from `System.in`. It also reads the command-line arguments, where each argument (as specified on the command line) must be either an `INTLIT` or a `BOOLLIT`. The interpreter will conduct the following checks (you do not necessarily need to do the checks in the order below):
