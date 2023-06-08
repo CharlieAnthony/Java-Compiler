@@ -23,7 +23,22 @@ The following are the rules which specify how expressions of various kinds are t
 ### Numerical expressions
 These are expressions which take values of type `int`, in particular arising from arithmetic operations on two values of type `int`. Any expression involving an arithmetic operator as below, where one of the sub-expressions involved is not of type `int`, should result in an error.
 
+| Operation | Expression |
+| --------- | ---------- |  
+| Integer constants | `                        `<br/>`     Γ ⊢ INTLIT : int     ` |
+| Addition | `Γ ⊢ P : int` `Γ ⊢ Q : int`<br/>`    Γ ⊢ (P + Q) : int     ` |
+| Subtraction | `Γ ⊢ P : int` `Γ ⊢ Q : int`<br/>`    Γ ⊢ (P - Q) : int     ` |
+| Multiplication | `Γ ⊢ P : int` `Γ ⊢ Q : int`<br/>`    Γ ⊢ (P * Q) : int     ` |
+| Division | `Γ ⊢ P : int` `Γ ⊢ Q : int`<br/>`    Γ ⊢ (P / Q) : int     ` |
 
+### Comparisons
+Comparison expressions are ones which relate two expressions of type `int`, to produce an expression of type `bool`. Any expression involving a comparison operator as below, where one of the sub-expressions involved is not of type `int`, should result in an error.
 
-
+| Operation | Expression |
+| --------- | ---------- |
+| Equality | `Γ ⊢ P : int` `Γ ⊢ Q : int`<br/>`    Γ ⊢ (P == Q) : bool   ` |
+| Less than | `Γ ⊢ P : int` `Γ ⊢ Q : int`<br/>`    Γ ⊢ (P < Q) : bool    ` |
+| Greater than | `Γ ⊢ P : int` `Γ ⊢ Q : int`<br/>`    Γ ⊢ (P > Q) : bool    ` |
+| Less than or equal | `Γ ⊢ P : int` `Γ ⊢ Q : int`<br/>`   Γ ⊢ (P <= Q) : bool    ` |
+| Greater than or equal | `Γ ⊢ P : int` `Γ ⊢ Q : int`<br/>`   Γ ⊢ (P >= Q) : bool    ` |
 
