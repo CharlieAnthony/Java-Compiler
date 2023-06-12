@@ -48,7 +48,7 @@ Contributions, issues, and feature requests are welcome. Feel free to check the 
 
 ## Contact
 
-If you have any questions, feel free to reach out to me. My discord handle is `charlieanthony`
+If you have any questions, feel free to reach out to me. My discord handle is `charlieanthony`.
 
 ## Acknowledgements
 - [ANTLR](https://www.antlr.org/)
