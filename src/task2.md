@@ -14,4 +14,16 @@ Your code generator will read a string (the input program in our [simple program
 2) Pushes the **arguments** (by convention, in reverse order) onto the stack.
 3) Pushes the **return address** — the address right after the jump — onto the stack.
 
-After the generated code finishes its operations, it should jump back to the return address (3. above), and the only value left on the stack should be the return value of `main` (1. above). As a concrete example, twoargs.asm is generated from a main function that takes two integer arguments and prints them to the screen. If we have placed rars_27a7c1f.jar and RARSInterface.java in the current folder, we can run twoargs.asm as follows:
+After the generated code finishes its operations, it should jump back to the return address (3. above), and the only value left on the stack should be the return value of `main` (1. above). As a concrete example, [twoargs.asm](twoargs.asm) is generated from a `main` function that takes two integer arguments and prints them to the screen. If we have placed `rars_27a7c1f.jar` and `RARSInterface.java` in the current folder, we can run [twoargs.asm](twoargs.asm) as follows:
+
+- On -nix based systems:
+
+    We can pipe RISC-V assembly code into [RARS](https://github.com/TheThirdOne/rars) with the shell command:
+    
+    `cat twoargs.asm | java -classpath ./rars_27a7c1f.jar ./RARSInterface.java 3 5 `
+    
+- On Windows systems:
+
+    We can pipe RISC-V assembly code into [RARS](https://github.com/TheThirdOne/rars) on the command line using:
+   
+    `cmd /c "(type .\twoargs.asm) | java -classpath .\rars_27a7c1f.jar .\RARSInterface.java 3 5"`
