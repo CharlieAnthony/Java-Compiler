@@ -1,0 +1,13 @@
+int main(int n, int d) {
+  collatzA(n, d)
+}
+
+int collatzA(int qoz29, int depth) {
+  if (qoz29 == 4)
+  then { print qoz29; print space; depth }
+  else {
+    if ((2*(qoz29 / 2)) == qoz29)
+    then { print qoz29; print space; collatzA((qoz29 / 2), (depth + 1)) }
+    else { print qoz29; print space; collatzA(((qoz29 * 3) + 1), (depth + 1)) }
+  }
+}
