@@ -1,9 +1,9 @@
 # Task 1: Creating an Interpreter
 ## Summary
-In this task you will write an interpreter for a [simple programming language]; this will involve writing a lexer, a parser (or their combination, if suitable), and doing a bit of semantic analysis. We will use the parser generator [ANTLR](https://www.antlr.org/) as our main tool to reduce the amount of hand-written code required.
+In this task you will write an interpreter for a [simple programming language](language.md); this will involve writing a lexer, a parser (or their combination, if suitable), and doing a bit of semantic analysis. We will use the parser generator [ANTLR](https://www.antlr.org/) as our main tool to reduce the amount of hand-written code required.
 
 ## Execution Model
-In our simple programming language, the main function is a function `int main(...)`, which may occur anywhere in the function declarations. The return value of a function is the value of the final expression in its body. All arguments to functions are passed by value, and the only identifiers defined in any function are as follows:
+In our [simple programming language](language.md), the main function is a function `int main(...)`, which may occur anywhere in the function declarations. The return value of a function is the value of the final expression in its body. All arguments to functions are passed by value, and the only identifiers defined in any function are as follows:
 - The names of other functions (which may be defined before or after the current function in the source file);
 - The parameters taken by the current function;
 - The local variables (defined at the top of the current function's body).
@@ -74,7 +74,7 @@ These are expressions, whose types depend entirely on the types of other identif
 | If statements        | `Γ ⊢ C : bool` `Γ ⊢ B₁ : α` `Γ ⊢ B₂ : α`<br/>`   Γ ⊢ if C then {B₁} else {B₂} : α   ` |                       | Q) : bool     ` |
 
 ## Input / Output specification
-Your interpreter will read a string (the input program in our simple programming language) from `System.in`. It also reads the command-line arguments, where each argument (as specified on the command line) must be either an `INTLIT` or a `BOOLLIT`. The interpreter will conduct the following checks (you do not necessarily need to do the checks in the order below):
+Your interpreter will read a string (the input program in our [simple programming language](language.md)) from `System.in`. It also reads the command-line arguments, where each argument (as specified on the command line) must be either an `INTLIT` or a `BOOLLIT`. The interpreter will conduct the following checks (you do not necessarily need to do the checks in the order below):
 
 1. Check that the program has a `main` function, which has return type `int`;
 2. Check that all the functions have distinct names, and all the parameters and local variables of each function have distinct names (that do not clash with function names);
