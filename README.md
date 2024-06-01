@@ -1,5 +1,7 @@
 # Simple Programming Language Interpreter and RISC-V Code Generator
 
+This repo contains my coursework for the compilers module I took at the university of sussex. For this coursework, I scored 91%. What follows is copied from the coursework specification, along with my submission.
+
 This project involves two main tasks, creating an interpreter and a RISC-V code generator, for a [simple programming language](/src/language.md). The language is based on a subset of the standard programming language features, and this project will help you to understand the fundamental concepts of interpreting and code generation.
 
 The project has been split into two main tasks for easier navigation and understanding.
@@ -41,10 +43,6 @@ To use this project, you need to follow the steps below:
 
 - The ANTLR parser generator is required for both tasks. You can download it from [here](https://www.antlr.org/).
 - The [RARS](https://github.com/TheThirdOne/rars) is required for task 2.
-
-## Contributing
-
-Contributions, issues, and feature requests are welcome. Feel free to check the issues page if you want to contribute.
 
 ## Contact
 
