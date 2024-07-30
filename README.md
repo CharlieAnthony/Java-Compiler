@@ -1,6 +1,6 @@
 # Simple Programming Language Interpreter and RISC-V Code Generator
 
-This repo contains my coursework for the compilers module I took at the university of sussex. For this coursework, I scored 91%. What follows is copied from the coursework specification, along with my submission.
+This repo contains my coursework for the compilers module I took at the University of Sussex. For this coursework, I scored 91%. What follows is copied from the coursework specification, along with my submission.
 
 This project involves two main tasks, creating an interpreter and a RISC-V code generator, for a [simple programming language](/src/language.md). The language is based on a subset of the standard programming language features, and this project will help you to understand the fundamental concepts of interpreting and code generation.
 
